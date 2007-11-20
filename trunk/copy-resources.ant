@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<project name="copy.resources" basedir="." default="copy.resources">
+
+  <target name="copy.resources">
+    <copy todir="out/production/maven-archetypes-idea-plugin">
+      <fileset dir="src/main/resources">
+        <include name="archetypes.xml"/>
+      </fileset>
+    </copy>
+  </target>
+
+</project>
