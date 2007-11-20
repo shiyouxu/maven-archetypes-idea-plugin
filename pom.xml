@@ -49,29 +49,54 @@
   </developers>
 
   <dependencies>
-     <dependency>
-       <groupId>com.intellij.idea</groupId>
-       <artifactId>openapi</artifactId>
-       <version>7.0.1</version>
-       <scope>system</scope>
-       <systemPath>${idea.home}/lib/openapi.jar</systemPath>
+    <dependency>
+      <groupId>com.intellij.idea</groupId>
+      <artifactId>openapi</artifactId>
+      <version>${idea.version}</version>
+      <scope>system</scope>
+      <systemPath>${idea.home}/lib/openapi.jar</systemPath>
     </dependency>
 
-     <dependency>
-       <groupId>com.intellij.idea</groupId>
-       <artifactId>extensions</artifactId>
-       <version>7.0.1</version>
-       <scope>system</scope>
-       <systemPath>${idea.home}/lib/extensions.jar</systemPath>
+    <dependency>
+      <groupId>com.intellij.idea</groupId>
+      <artifactId>extensions</artifactId>
+      <version>${idea.version}</version>
+      <scope>system</scope>
+      <systemPath>${idea.home}/lib/extensions.jar</systemPath>
     </dependency>
 
-     <dependency>
-       <groupId>com.intellij.idea</groupId>
-       <artifactId>jdom</artifactId>
-       <version>7549</version>
-       <scope>system</scope>
-       <systemPath>${idea.home}/lib/jdom.jar</systemPath>
+    <dependency>
+      <groupId>com.intellij.idea</groupId>
+      <artifactId>annotations</artifactId>
+      <version>${idea.version}</version>
+      <scope>system</scope>
+      <systemPath>${idea.home}/lib/annotations.jar</systemPath>
     </dependency>
+
+    <dependency>
+      <groupId>com.intellij.idea</groupId>
+      <artifactId>jdom</artifactId>
+      <version>${idea.version}</version>
+      <scope>system</scope>
+      <systemPath>${idea.home}/lib/jdom.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>com.intellij.idea</groupId>
+      <artifactId>maven</artifactId>
+      <version>${idea.version}</version>
+      <scope>system</scope>
+      <systemPath>${idea.home}/plugins/maven/lib/maven.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>com.intellij.idea</groupId>
+      <artifactId>maven-embedder</artifactId>
+      <version>${idea.version}</version>
+      <scope>system</scope>
+      <systemPath>${idea.home}/plugins/maven/lib/maven-embedder-idea-2.1.jar</systemPath>
+    </dependency>
+ 
   </dependencies>
 
   <build>
