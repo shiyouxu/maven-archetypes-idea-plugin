@@ -12,7 +12,7 @@
     </buildFile>
   </component>
   <component name="Archetypes.ToolWindow">
-    <option name="projectRootPath" value="C:\temp" />
+    <option name="projectRootPath" value="C:\temp\1" />
   </component>
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />
