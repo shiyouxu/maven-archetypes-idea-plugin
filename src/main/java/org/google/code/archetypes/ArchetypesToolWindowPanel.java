@@ -2,12 +2,16 @@ package org.google.code.archetypes;
 
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
+import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
+import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.vfs.VirtualFile;
 import org.google.code.archetypes.data.Archetype;
 import org.google.code.archetypes.data.Group;
 import org.google.code.archetypes.model.ArchetypeModel;
-import org.google.code.archetypes.model.GroupModel;
+import org.jdom.JDOMException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.List;
+import java.io.IOException;
 
 /**
  * This class represents archetypes panel.
@@ -35,14 +40,12 @@ public class ArchetypesToolWindowPanel extends JPanel {
 
   JButton createButton = new JButton("Create archetype...");
 
-  private ArchetypesReader archetypesReader;
   private Project project;
 
-  public ArchetypesToolWindowPanel(ArchetypesReader archetypesReader, Project project) {
-    this.archetypesReader = archetypesReader;
+  public ArchetypesToolWindowPanel(Project project) throws JDOMException, IOException {
     this.project = project;
 
-    groupCombo.setModel(new GroupModel(archetypesReader.getGroups()));
+    getConfiguration().loadArchetypesFile();
 
     groupCombo.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent e) {
@@ -55,10 +58,7 @@ public class ArchetypesToolWindowPanel extends JPanel {
         archetypeCombo.setModel(new ArchetypeModel(archetypes));
         archetypeCombo.setSelectedIndex(0);
       }
-
     });
-
-    groupCombo.setSelectedIndex(0);
 
     groupIdField.setText("org.test");
     artifactIdField.setText("test");
@@ -74,6 +74,10 @@ public class ArchetypesToolWindowPanel extends JPanel {
 
     this.setLayout(new BorderLayout());
     this.add(topPanel, BorderLayout.NORTH);
+  }
+
+  private ArchetypesConfiguration getConfiguration() {
+    return project.getComponent(ArchetypesConfiguration.class);
   }
 
   private JPanel fillPanel() {
@@ -176,13 +180,17 @@ public class ArchetypesToolWindowPanel extends JPanel {
     data.setProjectRootPath(workingDir.getText());
   }
 
+  public List<Group> getGroups() {
+    return getConfiguration().getArchetypesReader().getGroups();
+  }
+
   private Group getGroup(String groupName) {
     Group group = null;
 
-    List groups = archetypesReader.getGroups();
+    List<Group> groups = getConfiguration().getArchetypesReader().getGroups();
 
     for (int i = 0; i < groups.size() && group == null; i++) {
-      Group g = (Group) groups.get(i);
+      Group g = groups.get(i);
 
       if (g.getName().equals(groupName)) {
         group = g;

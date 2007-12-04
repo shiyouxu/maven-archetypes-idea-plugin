@@ -6,10 +6,12 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.util.xmlb.XmlSerializerUtil;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.io.File;
 
 /**
  * This class represents configuration component for Maven Archetype Tool Window.
@@ -23,15 +25,21 @@ import javax.swing.*;
 )
 public final class ArchetypesConfiguration
     implements ProjectComponent, Configurable, PersistentStateComponent<ArchetypesConfiguration> {
+  private static final Logger logger = Logger.getInstance(ArchetypesConfiguration.class.getName());
+
   public final static String COMPONENT_NAME = "Archetypes.Configuration";
 //  private final ImageIcon CONFIG_ICON =
 //          helper.getIcon("resources/icon.png", getClass());
+
+  private final static String ARCHETYPES_FILE_NAME = "archetypes.xml";
+
+  private ArchetypesReader archetypesReader = new ArchetypesReader();
 
   private ArchetypesConfigurationPanel panel;
 
   // properties to persist
 
-  private String repositoryHome;
+  private Boolean useExternalArchetypesFile;
   private String archetypesFileLocation;
 
   public boolean isModified() {
@@ -84,6 +92,7 @@ public final class ArchetypesConfiguration
   public void apply() throws ConfigurationException {
     if (panel != null) {
       panel.save(this);
+      loadArchetypesFile();
     }
   }
 
@@ -103,12 +112,12 @@ public final class ArchetypesConfiguration
     panel = null;
   }
 
-  public String getRepositoryHome() {
-    return repositoryHome;
+  public Boolean getUseExternalArchetypesFile() {
+    return useExternalArchetypesFile;
   }
 
-  public void setRepositoryHome(String repositoryHome) {
-    this.repositoryHome = repositoryHome;
+  public void setUseExternalArchetypesFile(Boolean useExternalArchetypesFile) {
+    this.useExternalArchetypesFile = useExternalArchetypesFile;
   }
 
   public String getArchetypesFileLocation() {
@@ -119,6 +128,58 @@ public final class ArchetypesConfiguration
     this.archetypesFileLocation = archetypesFileLocation;
   }
 
+  public void loadArchetypesFile() {
+    String fileName = getArchetypesFileName();
+
+    try {
+      archetypesReader.readConfigFile(fileName);
+
+      if(fileName.equals(ARCHETYPES_FILE_NAME)) {
+        logger.warn("Using internal \"" + ARCHETYPES_FILE_NAME + "\" file.");
+      }
+      else {
+        logger.warn("Using external \"" + ARCHETYPES_FILE_NAME + "\" file (" + fileName + ").");
+      }
+    }
+    catch(Exception e) {
+      try {
+        archetypesReader.readConfigFile(ARCHETYPES_FILE_NAME);
+
+      logger.warn("Using internal \"" + ARCHETYPES_FILE_NAME + "\" file.");
+      } catch (Exception e2) {
+        logger.error(e2.getMessage());
+      }
+    }
+  }
+
+  private String getArchetypesFileName() {
+     String fileName = ARCHETYPES_FILE_NAME;
+
+     if(getUseExternalArchetypesFile()) {
+       String location = getArchetypesFileLocation();
+
+       File file = new File(location);
+
+       if(file.exists()) {
+         if(file.isDirectory()) {
+           location = location + File.separatorChar + ARCHETYPES_FILE_NAME;
+
+           file = new File(location);
+         }
+       }
+
+       if(file.exists()) {
+         fileName = location;
+       }
+     }
+
+     return fileName;
+   }
+
+  public ArchetypesReader getArchetypesReader() {
+    return archetypesReader;
+  }
+  
   public ArchetypesConfiguration getState() {
     return this;
   }

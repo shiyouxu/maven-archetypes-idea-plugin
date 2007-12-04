@@ -14,6 +14,8 @@ import com.intellij.ui.content.Content;
 import com.intellij.util.xmlb.XmlSerializerUtil;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
+
 /**
  * The tool window for Maven Archetypes plugin.
  *
@@ -57,7 +59,6 @@ public class ArchetypesToolWindow
 
     toolWindow.getContentManager().addContent(content);
     //toolWindow.setIcon(IconLoader.getIcon("icon.png", ArchetypesToolWindow.class));
-
   }
 
   public void projectClosed() {
@@ -68,11 +69,7 @@ public class ArchetypesToolWindow
 
   public void initComponent() {
     try {
-      ArchetypesReader archetypesReader = new ArchetypesReader();
-
-      archetypesReader.readConfigFile("archetypes.xml");
-
-      panel = new ArchetypesToolWindowPanel(archetypesReader, project);
+      panel = new ArchetypesToolWindowPanel(project);
 
       panel.load(this);
     }

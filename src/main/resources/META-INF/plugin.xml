@@ -22,16 +22,28 @@
     </ul>
 
     Changes:
-     1. Initial implementation. 
+      <ul>
+        <li>1.0.1
+          <ol>
+            <li>1. Downgrading java version to 1.5 (to be compatible for Mac users)</li>
+            <li>2. Changing appfuse version to 2.0.1</li>
+            <li>3. Separating archetypes.xml file from jar file (make it avalilable for user modifications).</li>
+          </ol>
+        </li>
+
+        <li>1.0.0
+          <ol>
+            <li>Initial Release.</li>
+          </ol>
+        </li>
+      </ul>
   ]]></change-notes>
-  
+
   <project-components>
-    <!--
     <component>
       <implementation-class>org.google.code.archetypes.ArchetypesConfiguration</implementation-class>
       <option name="workspace" value="true"/>
     </component>
-     -->
 
     <component>
       <implementation-class>org.google.code.archetypes.ArchetypesToolWindow</implementation-class>
