@@ -1,15 +1,15 @@
 package org.google.code.archetypes;
 
-import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 
 import javax.swing.*;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 import java.awt.*;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 
 /**
  * This class represents form object for propagating changes in the configuration.
@@ -18,20 +18,30 @@ import java.awt.*;
  * @version 1.0 11/17/2007
  */
 public class ArchetypesConfigurationPanel extends JPanel {
-  private TextFieldWithBrowseButton repositoryHomeField = new TextFieldWithBrowseButton();
+  private JCheckBox useExternalArchetypesFileBox = new JCheckBox();
   private TextFieldWithBrowseButton archetypesFileLocationField = new TextFieldWithBrowseButton();
 
   public ArchetypesConfigurationPanel() {
-    DataContext dataContext = DataManager.getInstance().getDataContext();
-    Project project = DataKeys.PROJECT.getData(dataContext);
+    //DataContext dataContext = DataManager.getInstance().getDataContext();
+   // Project project = DataKeys.PROJECT.getData(dataContext);
 
-    FileChooserDescriptor descriptor1 = FileChooserDescriptorFactory.createSingleFolderDescriptor();
+ //   FileChooserDescriptor descriptor1 = FileChooserDescriptorFactory.createSingleFolderDescriptor();
 
-    repositoryHomeField.addBrowseFolderListener("Choose Project Root", "Select Location of Maven Repository", project, descriptor1);
+  //  useExternalArchetypesFileBox.addBrowseFolderListener("Choose Project Root", "Select Location of Maven Repository", project, descriptor1);
 
-    FileChooserDescriptor descriptor2 = FileChooserDescriptorFactory.createSingleFolderDescriptor();
+    FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleLocalFileDescriptor();
 
-    archetypesFileLocationField.addBrowseFolderListener("Choose Project Root", "Select Location of archetypes.xml file", null, descriptor2);
+    archetypesFileLocationField.addBrowseFolderListener("Choose archetypes.xml file location", "Select the location of archetypes.xml file", null, descriptor);
+
+    useExternalArchetypesFileBox.addChangeListener(new ChangeListener() {
+      public void stateChanged(ChangeEvent event) {
+        JCheckBox checkBox = (JCheckBox)event.getSource();
+
+        archetypesFileLocationField.setEnabled(checkBox.isSelected());
+      }
+    });
+
+    archetypesFileLocationField.setEnabled(useExternalArchetypesFileBox.isSelected());
 
      // panel 1
 
@@ -39,9 +49,10 @@ public class ArchetypesConfigurationPanel extends JPanel {
     panel1.setLayout(new BoxLayout(panel1, BoxLayout.X_AXIS));
 
     panel1.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel1.add(new JLabel("Select Location of Maven Repository:"));
+    panel1.add(new JLabel("Use external archetypes.xml file:"));
     panel1.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel1.add(repositoryHomeField);
+    panel1.add(useExternalArchetypesFileBox);
+    panel1.add(new JPanel());
     panel1.add(Box.createRigidArea(new Dimension(10, 0)));
 
     // panel 2
@@ -50,7 +61,7 @@ public class ArchetypesConfigurationPanel extends JPanel {
     panel2.setLayout(new BoxLayout(panel2, BoxLayout.X_AXIS));
 
     panel2.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel2.add(new JLabel(("Select Location of archetypes.xml file:")));
+    panel2.add(new JLabel(("Select the location of archetypes.xml file:")));
     panel2.add(Box.createRigidArea(new Dimension(10, 0)));
     panel2.add(archetypesFileLocationField);
     panel2.add(Box.createRigidArea(new Dimension(10, 0)));
@@ -73,24 +84,24 @@ public class ArchetypesConfigurationPanel extends JPanel {
   }
 
   public void load(ArchetypesConfiguration data) {
-    repositoryHomeField.setText(data.getRepositoryHome());
+    useExternalArchetypesFileBox.setSelected((data.getUseExternalArchetypesFile() != null) ? data.getUseExternalArchetypesFile() : false);
 
     archetypesFileLocationField.setText(data.getArchetypesFileLocation());
   }
 
   public void save(ArchetypesConfiguration data) {
-    data.setRepositoryHome(repositoryHomeField.getText());
+    data.setUseExternalArchetypesFile(useExternalArchetypesFileBox.isSelected());
 
     data.setArchetypesFileLocation(archetypesFileLocationField.getText());
   }
 
   public boolean isModified(ArchetypesConfiguration data) {
-    String text1 = repositoryHomeField.getText();
-    String text2 = archetypesFileLocationField.getText();
+    boolean isSelected = useExternalArchetypesFileBox.isSelected();
+    String text = archetypesFileLocationField.getText();
 
-    boolean isModified = (text1 != null ? !text1.equals(data.getRepositoryHome()) : data.getRepositoryHome() != null);
+    boolean isModified = (data.getUseExternalArchetypesFile() != null && isSelected != data.getUseExternalArchetypesFile());
 
-    isModified = isModified ||  (text2 != null ? !text2.equals(data.getArchetypesFileLocation()) : data.getArchetypesFileLocation() != null);
+    isModified = isModified ||  (text != null ? !text.equals(data.getArchetypesFileLocation()) : data.getArchetypesFileLocation() != null);
 
     return isModified;
   }
