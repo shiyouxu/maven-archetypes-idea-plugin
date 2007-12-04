@@ -15,18 +15,7 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iml" afterPath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maven-archetypes-idea-plugin.ipr" afterPath="$PROJECT_DIR$/maven-archetypes-idea-plugin.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iws" afterPath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profiles.xml" afterPath="$PROJECT_DIR$/profiles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfigurationPanel.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfigurationPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java" />
-    </list>
+    <list default="true" name="Default" comment="" />
     <ignored path="maven-archetypes-idea-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
   </component>
@@ -678,7 +667,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="5" width="1877" height="1147" extended-state="0" />
+    <frame x="43" y="5" width="1877" height="1147" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
