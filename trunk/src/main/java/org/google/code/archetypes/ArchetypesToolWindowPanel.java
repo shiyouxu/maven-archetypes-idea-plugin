@@ -2,25 +2,19 @@ package org.google.code.archetypes;
 
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
-import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.vfs.VirtualFile;
 import org.google.code.archetypes.data.Archetype;
 import org.google.code.archetypes.data.Group;
 import org.google.code.archetypes.model.ArchetypeModel;
-import org.jdom.JDOMException;
+import org.google.code.archetypes.model.GroupModel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.List;
-import java.io.IOException;
 
 /**
  * This class represents archetypes panel.
@@ -29,23 +23,40 @@ import java.io.IOException;
  * @version 1.0 11/17/2007
  */
 public class ArchetypesToolWindowPanel extends JPanel {
+  private static final Logger logger = Logger.getInstance(ArchetypesToolWindowPanel.class.getName());
+
   private TextFieldWithBrowseButton workingDir = new TextFieldWithBrowseButton();
 
   private JComboBox groupCombo = new JComboBox();
   private JComboBox archetypeCombo = new JComboBox();
+  private JLabel archetypeVersionLabel = new JLabel();
 
   private JTextField groupIdField = new JTextField(15);
   private JTextField artifactIdField = new JTextField(15);
   private JTextField versionField = new JTextField(15);
 
-  JButton createButton = new JButton("Create archetype...");
-
   private Project project;
 
-  public ArchetypesToolWindowPanel(Project project) throws JDOMException, IOException {
+  public ArchetypesToolWindowPanel(Project project) {
     this.project = project;
 
-    getConfiguration().loadArchetypesFile();
+    groupIdField.setText("org.test");
+    artifactIdField.setText("test");
+    versionField.setText("1.0");
+
+    JPanel topPanel = fillPanel();
+    JScrollPane scrollPane = new JScrollPane(topPanel);
+
+    this.setLayout(new BorderLayout());
+    this.add(scrollPane, BorderLayout.NORTH);
+  }
+
+  private ArchetypesConfiguration getConfiguration() {
+    return project.getComponent(ArchetypesConfiguration.class);
+  }
+
+  public void resetControls() {
+    groupCombo.setModel(new GroupModel(getConfiguration().getArchetypesReader().getGroups()));
 
     groupCombo.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent e) {
@@ -53,6 +64,7 @@ public class ArchetypesToolWindowPanel extends JPanel {
 
         Group group = getGroup(groupName);
 
+        archetypeVersionLabel.setText(group.getVersion());
         List archetypes = group.getArchetypes();
 
         archetypeCombo.setModel(new ArchetypeModel(archetypes));
@@ -60,25 +72,9 @@ public class ArchetypesToolWindowPanel extends JPanel {
       }
     });
 
-    groupIdField.setText("org.test");
-    artifactIdField.setText("test");
-    versionField.setText("1.0");
-
-    createButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-        submit();
-      }
-    });
-
-    JPanel topPanel = fillPanel();
-
-    this.setLayout(new BorderLayout());
-    this.add(topPanel, BorderLayout.NORTH);
+    groupCombo.setSelectedIndex(0);
   }
 
-  private ArchetypesConfiguration getConfiguration() {
-    return project.getComponent(ArchetypesConfiguration.class);
-  }
 
   private JPanel fillPanel() {
     FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
@@ -94,62 +90,76 @@ public class ArchetypesToolWindowPanel extends JPanel {
     panel0.add(new JLabel("Working Directory: "));
     panel0.add(workingDir);
 
-    // panel 1
-
     JPanel panel1 = new JPanel();
     panel1.setLayout(new BoxLayout(panel1, BoxLayout.X_AXIS));
 
     panel1.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel1.add(new JLabel("Group: "));
+    panel1.add(new JLabel("Archetype Info: "));
     panel1.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel1.add(groupCombo);
-    panel1.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel1.add(new JLabel("Archetype:  "));
-    panel1.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel1.add(archetypeCombo);
+    panel1.add(new JPanel());
     panel1.add(Box.createRigidArea(new Dimension(10, 0)));
 
-    // panel 2
-
-    JPanel panel2 = new JPanel();
+   JPanel panel2 = new JPanel();
     panel2.setLayout(new BoxLayout(panel2, BoxLayout.X_AXIS));
-
     panel2.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel2.add(new JLabel("Group ID:  "));
+    panel2.add(new JLabel("Group ID: "));
     panel2.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel2.add(groupIdField);
+    panel2.add(groupCombo);
     panel2.add(Box.createRigidArea(new Dimension(10, 0)));
 
-    // panel 3
-
-    JPanel panel3 = new JPanel();
+   JPanel panel3 = new JPanel();
     panel3.setLayout(new BoxLayout(panel3, BoxLayout.X_AXIS));
-
     panel3.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel3.add(new JLabel("Artifact ID: "));
+    panel3.add(new JLabel("Artifact ID:  "));
     panel3.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel3.add(artifactIdField);
+    panel3.add(archetypeCombo);
     panel3.add(Box.createRigidArea(new Dimension(10, 0)));
-
-    // panel 4
 
     JPanel panel4 = new JPanel();
     panel4.setLayout(new BoxLayout(panel4, BoxLayout.X_AXIS));
-
     panel4.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel4.add(new JLabel("Version:    "));
+    panel4.add(new JLabel("Version:  "));
     panel4.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel4.add(versionField);
+    panel4.add(archetypeVersionLabel);
     panel4.add(Box.createRigidArea(new Dimension(10, 0)));
-
-    // panel 5
+    panel4.add(new JPanel());
+    panel4.add(Box.createRigidArea(new Dimension(10, 0)));
 
     JPanel panel5 = new JPanel();
     panel5.setLayout(new BoxLayout(panel5, BoxLayout.X_AXIS));
 
     panel5.add(Box.createRigidArea(new Dimension(10, 0)));
-    panel5.add(createButton);
+    panel5.add(new JLabel("New Project Info: "));
     panel5.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel5.add(new JPanel());
+    panel5.add(Box.createRigidArea(new Dimension(10, 0)));
+
+    JPanel panel6 = new JPanel();
+    panel6.setLayout(new BoxLayout(panel6, BoxLayout.X_AXIS));
+
+    panel6.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel6.add(new JLabel("Group ID:  "));
+    panel6.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel6.add(groupIdField);
+    panel6.add(Box.createRigidArea(new Dimension(10, 0)));
+
+    JPanel panel7 = new JPanel();
+    panel7.setLayout(new BoxLayout(panel7, BoxLayout.X_AXIS));
+
+    panel7.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel7.add(new JLabel("Artifact ID: "));
+    panel7.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel7.add(artifactIdField);
+    panel7.add(Box.createRigidArea(new Dimension(10, 0)));
+
+    JPanel panel8 = new JPanel();
+    panel8.setLayout(new BoxLayout(panel8, BoxLayout.X_AXIS));
+
+    panel8.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel8.add(new JLabel("Version:    "));
+    panel8.add(Box.createRigidArea(new Dimension(10, 0)));
+    panel8.add(versionField);
+    panel8.add(Box.createRigidArea(new Dimension(10, 0)));
 
     // top panel
     JPanel topPanel = new JPanel();
@@ -160,13 +170,21 @@ public class ArchetypesToolWindowPanel extends JPanel {
     topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
     topPanel.add(panel1);
     topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
-    topPanel.add(panel2);
+   topPanel.add(panel2);
     topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
-    topPanel.add(panel3);
+   topPanel.add(panel3);
     topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
     topPanel.add(panel4);
     topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
     topPanel.add(panel5);
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+    topPanel.add(panel6);
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+    topPanel.add(panel7);
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+    topPanel.add(panel8);
+    topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+  // topPanel.add(panel9);
     topPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
     return topPanel;
@@ -200,6 +218,14 @@ public class ArchetypesToolWindowPanel extends JPanel {
     return group;
   }
 
+  public String getWorkingDirectory() {
+    return workingDir.getText();
+  }
+
+  public void setWorkingDirectory(String workingDirectory) {
+    this.workingDir.setText(workingDirectory);
+  }
+
   private Archetype getArchetype(String groupName, String archetypeName) {
     Archetype archetype = null;
 
@@ -218,16 +244,25 @@ public class ArchetypesToolWindowPanel extends JPanel {
     return archetype;
   }
 
-  private void submit() {
-    Group archetypeGroup = getGroup((String) groupCombo.getSelectedItem());
-    Archetype archetype = getArchetype((String) groupCombo.getSelectedItem(), (String) archetypeCombo.getSelectedItem());
-    String groupId = groupIdField.getText();
-    final String artifactId = artifactIdField.getText();
-    String version = versionField.getText();
+  public void createArchetype() {
+     Group archetypeGroup = getGroup((String) groupCombo.getSelectedItem());
+     Archetype archetype = getArchetype((String) groupCombo.getSelectedItem(), (String) archetypeCombo.getSelectedItem());
+     String groupId = groupIdField.getText();
+     final String artifactId = artifactIdField.getText();
+     String version = versionField.getText();
 
-    MavenExecutor mavenExecutor = new MavenExecutor(project);
+     String location = getConfiguration().getArchetypesFileLocation();
 
-    mavenExecutor.execute(workingDir.getText(), archetypeGroup, archetype, groupId, artifactId, version);
+     if(location.equals(ArchetypesConfiguration.ARCHETYPES_FILE_NAME)) {
+       logger.warn("Using internal \"" + ArchetypesConfiguration.ARCHETYPES_FILE_NAME + "\" file.");
+     }
+     else {
+       logger.warn("Using external \"" + ArchetypesConfiguration.ARCHETYPES_FILE_NAME + "\" file (" + location + ").");
+     }
+
+     MavenExecutor mavenExecutor = new MavenExecutor(project);
+
+     mavenExecutor.execute(workingDir.getText(), archetypeGroup, archetype, groupId, artifactId, version);
   }
- 
+
 }
