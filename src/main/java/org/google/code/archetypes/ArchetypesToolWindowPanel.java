@@ -195,14 +195,6 @@ public class ArchetypesToolWindowPanel extends JPanel {
     return topPanel;
   }
 
-  public void load(ArchetypesToolWindow data) {
-    workingDir.setText(data.getProjectRootPath());
-  }
-
-  public void save(ArchetypesToolWindow data) {
-    data.setProjectRootPath(workingDir.getText());
-  }
-
   public List<Group> getGroups() {
     return getConfiguration().getArchetypesReader().getGroups();
   }
