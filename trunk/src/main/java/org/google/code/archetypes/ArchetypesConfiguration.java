@@ -54,7 +54,12 @@ public final class ArchetypesConfiguration
   }
 
   public boolean isModified() {
-    return panel != null && panel.isModified(this);
+    ArchetypesToolWindowPanel panel2 = project.getComponent(ArchetypesToolWindow.class).getPanel();
+
+    setWorkingDirectory(panel2.getWorkingDirectory());    
+
+    return panel != null && panel.isModified(this) ||
+               (panel2.isModified(this));
   }
 
   public void projectOpened() {
@@ -151,11 +156,9 @@ public final class ArchetypesConfiguration
   }
 
   public ArchetypesConfiguration getState() {
-    ArchetypesToolWindow archetypesToolWindow = project.getComponent(ArchetypesToolWindow.class);
+    ArchetypesToolWindowPanel panel = project.getComponent(ArchetypesToolWindow.class).getPanel();
 
-    ArchetypesToolWindowPanel archetypesToolWindowPanel = archetypesToolWindow.getPanel();
-
-    workingDirectory = archetypesToolWindowPanel.getWorkingDirectory();
+    setWorkingDirectory(panel.getWorkingDirectory());
 
     return this;
   }
@@ -164,6 +167,12 @@ public final class ArchetypesConfiguration
     XmlSerializerUtil.copyBean(state, this);
 
     loadArchetypesFile();
+
+    ArchetypesToolWindow archetypesToolWindow = project.getComponent(ArchetypesToolWindow.class);
+
+    ArchetypesToolWindowPanel archetypesToolWindowPanel = archetypesToolWindow.getPanel();
+
+    archetypesToolWindowPanel.setWorkingDirectory(workingDirectory);
   }
 
   public void loadArchetypesFile() {
@@ -181,18 +190,6 @@ public final class ArchetypesConfiguration
         logger.error(e2.getMessage());
       }
     }
-
-    ArchetypesToolWindow archetypesToolWindow = project.getComponent(ArchetypesToolWindow.class);
-
-    ArchetypesToolWindowPanel archetypesToolWindowPanel = archetypesToolWindow.getPanel();
-
-    archetypesToolWindowPanel.load(archetypesToolWindow);
-
-    archetypesToolWindowPanel.resetControls();
-
-    archetypesToolWindowPanel.setWorkingDirectory(workingDirectory);
-
-    archetypesToolWindowPanel.save(archetypesToolWindow);
   }
 
   private String getArchetypesFileName() {

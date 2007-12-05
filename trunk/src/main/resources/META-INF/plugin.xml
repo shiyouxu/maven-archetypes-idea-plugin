@@ -4,7 +4,7 @@
   <name>Maven Archetypes</name>
 
   <description>This plugin helps to generate initial java project layout with the help of Maven Archetypes.</description>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <idea-version min="2000"/>
 
   <vendor url="http://scriptlandia.blogspot.com" email="shvets_alexander@yahoo.com">Alexander Shvets</vendor>
@@ -23,7 +23,7 @@
 
     Changes:
       <ul>
-        <li>1.0.1
+        <li>1.0.2
           <ol>
             <li>1. Downgrading java version to 1.5 (to be compatible for Mac users)</li>
             <li>2. Changing appfuse version to 2.0.1</li>

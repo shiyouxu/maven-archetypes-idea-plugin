@@ -12,8 +12,7 @@ import org.google.code.archetypes.model.GroupModel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.awt.event.*;
 import java.util.List;
 
 /**
@@ -80,6 +79,12 @@ public class ArchetypesToolWindowPanel extends JPanel {
     FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
     workingDir.addBrowseFolderListener("Choose Working Directory",
         "Select the location where new Project will be created", project, descriptor);
+    workingDir.addFocusListener(new FocusAdapter() {
+
+      public void focusLost(FocusEvent e) {
+        System.out.print("");
+      }
+    });
 
     // panel 0
 
@@ -224,6 +229,12 @@ public class ArchetypesToolWindowPanel extends JPanel {
 
   public void setWorkingDirectory(String workingDirectory) {
     this.workingDir.setText(workingDirectory);
+  }
+
+  public boolean isModified(ArchetypesConfiguration data) {
+    String text = workingDir.getText();
+
+    return (text != null ? !text.equals(data.getWorkingDirectory()) : data.getWorkingDirectory() != null);
   }
 
   private Archetype getArchetype(String groupName, String archetypeName) {
