@@ -2,7 +2,7 @@ package org.google.code.archetypes;
 
 import org.google.code.archetypes.data.Archetype;
 import org.google.code.archetypes.data.Group;
-import org.google.code.archetypes.util.XmlHelper;
+import org.google.code.archetypes.common.XmlHelper;
 import org.jdom.Attribute;
 import org.jdom.Element;
 import org.jdom.JDOMException;

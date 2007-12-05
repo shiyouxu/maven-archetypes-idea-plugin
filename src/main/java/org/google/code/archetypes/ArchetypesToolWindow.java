@@ -1,20 +1,20 @@
 package org.google.code.archetypes;
 
-import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.components.State;
-import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.peer.PeerFactory;
-import com.intellij.ui.content.Content;
-import com.intellij.util.xmlb.XmlSerializerUtil;
+import com.intellij.openapi.wm.ToolWindowType;
+import com.intellij.openapi.ui.Messages;
+import org.google.code.archetypes.common.ToolWindowComponent;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
 
 /**
  * The tool window for Maven Archetypes plugin.
@@ -22,13 +22,9 @@ import java.io.File;
  * @author Alexander Shvets
  * @version 1.0 11/17/2007
  */
-@State(
-  name = ArchetypesToolWindow.COMPONENT_NAME,
-  storages = {@Storage(id = "archetypes", file = "$PROJECT_FILE$")}
-)
-public class ArchetypesToolWindow
-          implements ProjectComponent, PersistentStateComponent<ArchetypesToolWindow> {
-  private static final Logger logger = Logger.getInstance(ArchetypesToolWindow.class.getName());
+public class ArchetypesToolWindow extends ToolWindowComponent
+    implements ProjectComponent {
+  public static final String ACTION_GROUP_ID = "archetypes.ToolWindow";
 
   public static final String COMPONENT_NAME = "Archetypes.ToolWindow";
   public static final String TOOL_WINDOW_ID = "Archetypes";
@@ -37,49 +33,31 @@ public class ArchetypesToolWindow
 
   private String projectRootPath;
 
-  private ArchetypesToolWindowPanel panel;
-
-  private Project project;
-
-  public ArchetypesToolWindow() {}
-
   public ArchetypesToolWindow(Project project) {
-    this.project = project;
+    super(project, TOOL_WINDOW_ID);
   }
 
   public void projectOpened() {
-    ToolWindowManager toolWindowManager = ToolWindowManager.getInstance(project);
+    initMainPanel();
 
-    ToolWindow toolWindow =
-        toolWindowManager.registerToolWindow(TOOL_WINDOW_ID, true, ToolWindowAnchor.RIGHT);
+    initContentPanel();
 
-    PeerFactory peerFactory = PeerFactory.getInstance();
+    openConsole();
 
-    Content content = peerFactory.getContentFactory().createContent(panel, "", false);
-
-    toolWindow.getContentManager().addContent(content);
-    //toolWindow.setIcon(IconLoader.getIcon("icon.png", ArchetypesToolWindow.class));
+    setRegistered(true);
   }
 
   public void projectClosed() {
-    ToolWindowManager toolWindowManager = ToolWindowManager.getInstance(project);
+    disposeConsole();
 
-    toolWindowManager.unregisterToolWindow(TOOL_WINDOW_ID);
+    setRegistered(false);
   }
 
-  public void initComponent() {
-    try {
-      panel = new ArchetypesToolWindowPanel(project);
-
-      panel.load(this);
-    }
-    catch (Exception e) {
-      logger.error(e.getMessage());
-    }
+ public void initComponent() {
+    init();
   }
-
   public void disposeComponent() {
-    panel = null;
+    release();
   }
 
   @NotNull
@@ -95,14 +73,57 @@ public class ArchetypesToolWindow
     this.projectRootPath = projectRootPath;
   }
 
-  public ArchetypesToolWindow getState() {
-    panel.save(this);
-
-    return this;
+  public ArchetypesToolWindowPanel getPanel() {
+    return (ArchetypesToolWindowPanel)getContentPanel();
   }
 
-  public void loadState(ArchetypesToolWindow state) {
-    XmlSerializerUtil.copyBean(state, this);
+  protected ToolWindow createToolWindow() {
+    Icon icon = null;
+
+    ToolWindow toolWindow = ideaHelper.createToolWindow(getProject(), getMainPanel(), TOOL_WINDOW_ID, ToolWindowAnchor.LEFT, icon);
+
+    toolWindow.setType(ToolWindowType.DOCKED, null);
+
+    return toolWindow;
   }
+
+  protected JComponent createToolbar() {
+    ActionManager actionManager = ActionManager.getInstance();
+
+    ActionGroup actionGroup =
+        (ActionGroup) actionManager.getAction(ACTION_GROUP_ID);
+
+    ActionToolbar toolBar =
+        actionManager.createActionToolbar(TOOL_WINDOW_ID, actionGroup, false);
+
+    return toolBar.getComponent();
+  }
+
+  protected void createContentPanel() {
+    contentPanel = new ArchetypesToolWindowPanel(getProject());
+
+    contentPanel.setBorder(new EmptyBorder(2, 2, 2, 2));
+  }
+
+ protected void initMainPanel() {
+    mainPanel.add(createToolbar(), BorderLayout.WEST);
+  }
+
+  protected void initContentPanel() {}
+
+  public void createArchetype() {
+    if(projectRootPath == null || projectRootPath.trim().length() == 0) {
+      Messages.showMessageDialog(
+          "You have to specify Working Directory",
+          "Warning",
+          Messages.getInformationIcon()
+      );
+    }
+    else {
+      ArchetypesToolWindowPanel panel = ((ArchetypesToolWindowPanel)contentPanel);
+
+      panel.createArchetype();
+    }
+   }
 
 }

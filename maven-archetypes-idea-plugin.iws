@@ -15,7 +15,22 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="" />
+    <list default="true" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/action/CreateArchetypeAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/action" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfiguration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/archetypes.xml" afterPath="$PROJECT_DIR$/src/main/resources/archetypes.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iws" afterPath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iws" />
+      <change type="MOVED" beforePath="C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java\org\google\code\archetypes\util\IdeaHelper.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/common/IdeaHelper.java" />
+      <change type="MOVED" beforePath="C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java\org\google\code\archetypes\util\XmlHelper.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/common/XmlHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/WarningDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/common" />
+    </list>
     <ignored path="maven-archetypes-idea-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
   </component>
@@ -48,19 +63,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
       <breakpoint url="file://C:/Work/Projects/jlaunchpad/trunk/launcher/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/UniversalLauncher.java" line="41" class="Class at UniversalLauncher.java:41" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java" line="47" class="org.google.code.archetypes.ArchetypesToolWindowPanel" package="org.google.code.archetypes">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -138,28 +140,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ArchetypesToolWindowPanel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java">
+      <file leaf-file-name="ToolWindowComponent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/common/ToolWindowComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1629" selection-end="1629" vertical-scroll-proportion="0.17121848">
+            <state line="83" column="19" selection-start="1944" selection-end="1944" vertical-scroll-proportion="1.6648452">
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1196791106859" expanded="true" signature="1598:2444" placeholder="{...}" />
-                <marker date="1196791106859" expanded="true" signature="2229:2317" placeholder="{...}" />
-                <marker date="1196791106859" expanded="true" signature="2284:2311" placeholder="{...}" />
-                <marker date="1196791106859" expanded="true" signature="2599:5755" placeholder="{...}" />
-                <marker date="1196791106859" expanded="true" signature="5803:5859" placeholder="{...}" />
-                <marker date="1196791106859" expanded="true" signature="5907:5963" placeholder="{...}" />
-                <marker date="1196791106859" expanded="true" signature="5998:6068" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArchetypesToolWindow.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java">
+      <file leaf-file-name="ArchetypesConfigurationPanel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfigurationPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="13" selection-start="930" selection-end="930" vertical-scroll-proportion="-0.15756303">
+            <state line="33" column="0" selection-start="1342" selection-end="1501" vertical-scroll-proportion="0.8306011">
               <folding />
             </state>
           </provider>
@@ -168,7 +163,7 @@
       <file leaf-file-name="ArchetypesConfiguration.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="0" selection-start="3223" selection-end="3223" vertical-scroll-proportion="0.17121848">
+            <state line="192" column="76" selection-start="4591" selection-end="4957" vertical-scroll-proportion="1.4080145">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,19 +171,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plugin.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
+      <file leaf-file-name="ArchetypesToolWindowPanel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="93" selection-start="1190" selection-end="1190" vertical-scroll-proportion="0.59311086">
+            <state line="196" column="14" selection-start="7126" selection-end="7126" vertical-scroll-proportion="0.5774135">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1196822040734" expanded="true" signature="1422:1743" placeholder="{...}" />
+                <marker date="1196822040734" expanded="true" signature="2516:7006" placeholder="{...}" />
+                <marker date="1196822040734" expanded="true" signature="7054:7110" placeholder="{...}" />
+                <marker date="1196822040734" expanded="true" signature="7158:7214" placeholder="{...}" />
+                <marker date="1196822040734" expanded="true" signature="7249:7319" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MavenExecutor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="115" column="0" selection-start="4404" selection-end="4404" vertical-scroll-proportion="0.33333334">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArchetypesConfigurationPanel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfigurationPanel.java">
+      <file leaf-file-name="Messages.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/Messages.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="28" selection-start="2313" selection-end="2313" vertical-scroll-proportion="0.9579832">
+            <state line="64" column="0" selection-start="2522" selection-end="2522" vertical-scroll-proportion="0.33333334">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WarningDialog.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/WarningDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="0" selection-start="1624" selection-end="1624" vertical-scroll-proportion="1.7304189">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextFieldWithBrowseButton.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/TextFieldWithBrowseButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="91" selection-start="1877" selection-end="1877" vertical-scroll-proportion="0.7613843">
               <folding />
             </state>
           </provider>
@@ -220,6 +251,94 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="maven-archetypes-idea-plugin" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="maven-archetypes-idea-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="maven-archetypes-idea-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="maven-archetypes-idea-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="com.intellij" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="maven-archetypes-idea-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="maven-archetypes-idea-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="com.intellij" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="openapi" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="maven-archetypes-idea-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="maven-archetypes-idea-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="com.intellij" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="openapi" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="ui" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="maven-archetypes-idea-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="maven-archetypes-idea-plugin" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="org.google.code.archetypes" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
         </PATH_ELEMENT>
       </PATH>
     </subPane>
@@ -378,75 +497,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java\org\google\code\archetypes\util" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="maven-archetypes-idea-plugin" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="maven-archetypes-idea-plugin" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java\org\google\code\archetypes" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java\org\google\code\archetypes\model" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="maven-archetypes-idea-plugin" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="maven-archetypes-idea-plugin" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java\org\google\code\archetypes" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java\org\google\code\archetypes\data" />
+          <option name="myItemId" value="PsiDirectory:C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java\org\google\code\archetypes\action" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -478,7 +529,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="0.16666667" version="1" splitterProportion="0.5">
+    <navigator currentView="PackagesPane" proportions="0.16666667" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -492,13 +543,33 @@
     </navigator>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="259" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="214" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="39" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="244" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="203" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="218" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="188" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="987" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="188" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="1028" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
   </component>
   <component name="RunManager" selected="Plugin.archetypes-plugin">
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -667,42 +738,42 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="5" width="1877" height="1147" extended-state="1" />
-    <editor active="true" />
+    <frame x="43" y="5" width="1877" height="1147" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
-      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" order="8" />
+      <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" order="9" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958768" order="1" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756868" order="1" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46185148" order="17" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="9" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756868" order="2" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40284842" order="1" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="10" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="10" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" order="11" />
       <window_info id="FileBrowser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="5" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756868" order="11" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935324" order="6" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756868" order="12" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935324" order="7" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" order="3" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24903794" order="0" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="12" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="13" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="5" />
-      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="13" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756868" order="2" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
+      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="14" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756868" order="3" />
       <window_info id="DBHelper" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="6" />
-      <window_info id="Maven Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296593" order="14" />
+      <window_info id="Maven Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296593" order="15" />
       <window_info id="Archetypes" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32922733" order="7" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="4" />
-      <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="15" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
+      <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="16" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
-      <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
-      <window_info id="DBOutput" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998997" order="16" />
+      <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="4" />
+      <window_info id="DBOutput" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998997" order="17" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -774,126 +845,130 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/components/BaseComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="17" selection-start="857" selection-end="857" vertical-scroll-proportion="0.21976866">
+        <state line="38" column="86" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.35166666">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/components/ApplicationComponent.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/util/IconLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="56" selection-start="991" selection-end="991" vertical-scroll-proportion="0.16239317">
+        <state line="78" column="0" selection-start="2732" selection-end="2732" vertical-scroll-proportion="0.29373997">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/util/xmlb/XmlSerializerUtil.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/actionSystem/ActionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="941" selection-end="941" vertical-scroll-proportion="0.36597112">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/components/ExportableApplicationComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="17" selection-start="784" selection-end="784" vertical-scroll-proportion="0.19348268">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/options/Configurable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="17" selection-start="2185" selection-end="2185" vertical-scroll-proportion="1.1316212">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.6.0/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1131" column="0" selection-start="43972" selection-end="44026" vertical-scroll-proportion="0.33197555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/util/IdeaHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="785" selection-end="785" vertical-scroll-proportion="0.019957984">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="22" selection-start="254" selection-end="254" vertical-scroll-proportion="0.1431647">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.6.0/src.zip!/java/awt/EventQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="598" column="0" selection-start="26590" selection-end="26590" vertical-scroll-proportion="0.019957984">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.6.0/src.zip!/javax/swing/AbstractButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="317" column="16" selection-start="11554" selection-end="11554" vertical-scroll-proportion="0.019957984">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/archetypes.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="67" column="32" selection-start="2573" selection-end="2573" vertical-scroll-proportion="0.4542536">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="930" selection-end="930" vertical-scroll-proportion="-0.15756303">
+        <state line="114" column="0" selection-start="2891" selection-end="2891" vertical-scroll-proportion="0.60084033">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.6.0/src.zip!/javax/swing/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="197" column="17" selection-start="9538" selection-end="9538" vertical-scroll-proportion="-1.2552521">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/DialogWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="20" selection-start="5841" selection-end="5841" vertical-scroll-proportion="0.3329832">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfigurationPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="28" selection-start="2313" selection-end="2313" vertical-scroll-proportion="0.9579832">
+        <state line="33" column="0" selection-start="1342" selection-end="1501" vertical-scroll-proportion="0.8306011">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/CommonBundle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1629" selection-end="1629" vertical-scroll-proportion="0.17121848">
+        <state line="103" column="23" selection-start="3012" selection-end="3012" vertical-scroll-proportion="0.3329832">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/fileChooser/FileChooserDescriptorFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="38" selection-start="2214" selection-end="2214" vertical-scroll-proportion="0.48109242">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/TextFieldWithBrowseButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="91" selection-start="1877" selection-end="1877" vertical-scroll-proportion="0.7613843">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/common/ToolWindowComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="19" selection-start="1944" selection-end="1944" vertical-scroll-proportion="1.6648452">
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1196791106859" expanded="true" signature="1598:2444" placeholder="{...}" />
-            <marker date="1196791106859" expanded="true" signature="2229:2317" placeholder="{...}" />
-            <marker date="1196791106859" expanded="true" signature="2284:2311" placeholder="{...}" />
-            <marker date="1196791106859" expanded="true" signature="2599:5755" placeholder="{...}" />
-            <marker date="1196791106859" expanded="true" signature="5803:5859" placeholder="{...}" />
-            <marker date="1196791106859" expanded="true" signature="5907:5963" placeholder="{...}" />
-            <marker date="1196791106859" expanded="true" signature="5998:6068" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="0" selection-start="3223" selection-end="3223" vertical-scroll-proportion="0.17121848">
+        <state line="192" column="76" selection-start="4591" selection-end="4957" vertical-scroll-proportion="1.4080145">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="93" selection-start="1190" selection-end="1190" vertical-scroll-proportion="0.59311086">
+        <state line="196" column="14" selection-start="7126" selection-end="7126" vertical-scroll-proportion="0.5774135">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1196822040734" expanded="true" signature="1422:1743" placeholder="{...}" />
+            <marker date="1196822040734" expanded="true" signature="2516:7006" placeholder="{...}" />
+            <marker date="1196822040734" expanded="true" signature="7054:7110" placeholder="{...}" />
+            <marker date="1196822040734" expanded="true" signature="7158:7214" placeholder="{...}" />
+            <marker date="1196822040734" expanded="true" signature="7249:7319" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/Messages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="2522" selection-end="2522" vertical-scroll-proportion="0.33333334">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="0" selection-start="4404" selection-end="4404" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/WarningDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="1624" selection-end="1624" vertical-scroll-proportion="1.7304189">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -4,9 +4,10 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.project.Project;
 import com.intellij.util.xmlb.XmlSerializerUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,7 +32,7 @@ public final class ArchetypesConfiguration
 //  private final ImageIcon CONFIG_ICON =
 //          helper.getIcon("resources/icon.png", getClass());
 
-  private final static String ARCHETYPES_FILE_NAME = "archetypes.xml";
+  public final static String ARCHETYPES_FILE_NAME = "archetypes.xml";
 
   private ArchetypesReader archetypesReader = new ArchetypesReader();
 
@@ -39,8 +40,18 @@ public final class ArchetypesConfiguration
 
   // properties to persist
 
-  private Boolean useExternalArchetypesFile;
+  private Boolean useExternalArchetypesFile = Boolean.FALSE;
   private String archetypesFileLocation;
+  private String workingDirectory;
+
+  private Project project;
+
+  public ArchetypesConfiguration() {
+  }
+
+  public ArchetypesConfiguration(Project project) {
+    this.project = project;
+  }
 
   public boolean isModified() {
     return panel != null && panel.isModified(this);
@@ -58,13 +69,23 @@ public final class ArchetypesConfiguration
   }
 
   public void initComponent() {
+    if (panel == null) {
+      panel = new ArchetypesConfigurationPanel();
+    }
   }
 
   public void disposeComponent() {
+    panel = null;
   }
 
   public String getDisplayName() {
     return "Archetypes";
+  }
+
+  public JComponent createComponent() {
+    initComponent();
+
+    return panel.getRootComponent();
   }
 
   public Icon getIcon() {
@@ -76,14 +97,6 @@ public final class ArchetypesConfiguration
     return null;
   }
 
-  public JComponent createComponent() {
-    if (panel == null) {
-      panel = new ArchetypesConfigurationPanel();
-    }
-
-    return panel.getRootComponent();
-  }
-
   /**
    * Stores settings from panel to configuration bean.
    *
@@ -92,6 +105,7 @@ public final class ArchetypesConfiguration
   public void apply() throws ConfigurationException {
     if (panel != null) {
       panel.save(this);
+
       loadArchetypesFile();
     }
   }
@@ -128,64 +142,85 @@ public final class ArchetypesConfiguration
     this.archetypesFileLocation = archetypesFileLocation;
   }
 
-  public void loadArchetypesFile() {
-    String fileName = getArchetypesFileName();
-
-    try {
-      archetypesReader.readConfigFile(fileName);
-
-      if(fileName.equals(ARCHETYPES_FILE_NAME)) {
-        logger.warn("Using internal \"" + ARCHETYPES_FILE_NAME + "\" file.");
-      }
-      else {
-        logger.warn("Using external \"" + ARCHETYPES_FILE_NAME + "\" file (" + fileName + ").");
-      }
-    }
-    catch(Exception e) {
-      try {
-        archetypesReader.readConfigFile(ARCHETYPES_FILE_NAME);
-
-      logger.warn("Using internal \"" + ARCHETYPES_FILE_NAME + "\" file.");
-      } catch (Exception e2) {
-        logger.error(e2.getMessage());
-      }
-    }
+  public String getWorkingDirectory() {
+    return workingDirectory;
   }
 
-  private String getArchetypesFileName() {
-     String fileName = ARCHETYPES_FILE_NAME;
-
-     if(getUseExternalArchetypesFile()) {
-       String location = getArchetypesFileLocation();
-
-       File file = new File(location);
-
-       if(file.exists()) {
-         if(file.isDirectory()) {
-           location = location + File.separatorChar + ARCHETYPES_FILE_NAME;
-
-           file = new File(location);
-         }
-       }
-
-       if(file.exists()) {
-         fileName = location;
-       }
-     }
-
-     return fileName;
-   }
-
-  public ArchetypesReader getArchetypesReader() {
-    return archetypesReader;
+  public void setWorkingDirectory(String workingDirectory) {
+    this.workingDirectory = workingDirectory;
   }
-  
+
   public ArchetypesConfiguration getState() {
+    ArchetypesToolWindow archetypesToolWindow = project.getComponent(ArchetypesToolWindow.class);
+
+    ArchetypesToolWindowPanel archetypesToolWindowPanel = archetypesToolWindow.getPanel();
+
+    workingDirectory = archetypesToolWindowPanel.getWorkingDirectory();
+
     return this;
   }
 
   public void loadState(ArchetypesConfiguration state) {
     XmlSerializerUtil.copyBean(state, this);
+
+    loadArchetypesFile();
+  }
+
+  public void loadArchetypesFile() {
+    archetypesFileLocation = getArchetypesFileName();
+
+    try {
+      archetypesReader.readConfigFile(archetypesFileLocation);
+    }
+    catch (Exception e) {
+      try {
+        useExternalArchetypesFile = Boolean.FALSE;
+        archetypesFileLocation = ARCHETYPES_FILE_NAME;
+        archetypesReader.readConfigFile(ARCHETYPES_FILE_NAME);
+      } catch (Exception e2) {
+        logger.error(e2.getMessage());
+      }
+    }
+
+    ArchetypesToolWindow archetypesToolWindow = project.getComponent(ArchetypesToolWindow.class);
+
+    ArchetypesToolWindowPanel archetypesToolWindowPanel = archetypesToolWindow.getPanel();
+
+    archetypesToolWindowPanel.load(archetypesToolWindow);
+
+    archetypesToolWindowPanel.resetControls();
+
+    archetypesToolWindowPanel.setWorkingDirectory(workingDirectory);
+
+    archetypesToolWindowPanel.save(archetypesToolWindow);
+  }
+
+  private String getArchetypesFileName() {
+    String fileName = ARCHETYPES_FILE_NAME;
+
+    if (getUseExternalArchetypesFile()) {
+      String location = getArchetypesFileLocation();
+
+      File file = new File(location);
+
+      if (file.exists()) {
+        if (file.isDirectory()) {
+          location = location + File.separatorChar + ARCHETYPES_FILE_NAME;
+
+          file = new File(location);
+        }
+      }
+
+      if (file.exists()) {
+        fileName = location;
+      }
+    }
+
+    return fileName;
+  }
+
+  public ArchetypesReader getArchetypesReader() {
+    return archetypesReader;
   }
 
 }

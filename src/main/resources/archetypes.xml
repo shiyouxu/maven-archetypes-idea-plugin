@@ -29,7 +29,7 @@
     </archetypes>
   </group>
 
-  <group name="Appfuse" groupId="org.appfuse.archetypes" prefix="appfuse-" version="2.0" >
+  <group name="Appfuse" groupId="org.appfuse.archetypes" prefix="appfuse-" version="2.0.1" >
     <archetypes>
       <archetype name="basic-jsf" 
             description="Archetype for creating a web application with Hibernate, Spring and JSF"/>

@@ -1,7 +1,7 @@
 // XmlHelper.bsh
 // Author: Alexander Shvets
 
-package org.google.code.archetypes.util;
+package org.google.code.archetypes.common;
 
 import org.jdom.Document;
 import org.jdom.Element;

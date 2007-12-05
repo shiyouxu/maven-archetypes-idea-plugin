@@ -49,8 +49,19 @@
       <implementation-class>org.google.code.archetypes.ArchetypesToolWindow</implementation-class>
       <interface-class>org.google.code.archetypes.ArchetypesToolWindow</interface-class>
     </component>
-
   </project-components>
+
+  <actions>
+    <group id="archetypes.ToolWindow" text="Archetypes" popup="true">
+
+      <action id="archetypes.CreateArchetypeAction"
+              class="org.google.code.archetypes.action.CreateArchetypeAction"
+              text="Create Archetype"
+              description="Create Archetype"
+              icon="/actions/execute.png">
+      </action>
+    </group>
+   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
       <errorHandler implementation="com.intellij.diagnostic.ITNReporter"/>

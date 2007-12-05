@@ -116,11 +116,20 @@ public class MavenExecutor {
      File projectDir = new File(workingDir + "/" + artifactId);
 
      if (projectDir.exists() && projectDir.list().length > 0) {
-       Messages.showMessageDialog(
+/*       Messages.showMessageDialog(
            "Output directory: " + workingDir + File.separatorChar + artifactId + "  should not exist!",
            "Warning",
            Messages.getInformationIcon()
        );
+       */
+
+       WarningDialog dialog = new WarningDialog(
+           project,
+           workingDir + File.separatorChar + artifactId,
+           "Output directory: " + workingDir + File.separatorChar + artifactId + "  shouldn't exist!",
+           "Warning",
+            Messages.getInformationIcon());
+       dialog.show();
      }
      else {
        if (!builder.isRunning()) {
