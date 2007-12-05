@@ -29,10 +29,6 @@ public class ArchetypesToolWindow extends ToolWindowComponent
   public static final String COMPONENT_NAME = "Archetypes.ToolWindow";
   public static final String TOOL_WINDOW_ID = "Archetypes";
 
-  // properties to persist
-
-  private String projectRootPath;
-
   public ArchetypesToolWindow(Project project) {
     super(project, TOOL_WINDOW_ID);
   }
@@ -63,14 +59,6 @@ public class ArchetypesToolWindow extends ToolWindowComponent
   @NotNull
   public String getComponentName() {
     return COMPONENT_NAME;
-  }
-
-  public String getProjectRootPath() {
-    return projectRootPath;
-  }
-
-  public void setProjectRootPath(String projectRootPath) {
-    this.projectRootPath = projectRootPath;
   }
 
   public ArchetypesToolWindowPanel getPanel() {
@@ -120,7 +108,9 @@ public class ArchetypesToolWindow extends ToolWindowComponent
   }
 
   public void createArchetype() {
-    if(projectRootPath == null || projectRootPath.trim().length() == 0) {
+    String workingDir = getPanel().getWorkingDirectory();
+
+    if(workingDir == null || workingDir.trim().length() == 0) {
       Messages.showMessageDialog(
           "You have to specify Working Directory",
           "Warning",
