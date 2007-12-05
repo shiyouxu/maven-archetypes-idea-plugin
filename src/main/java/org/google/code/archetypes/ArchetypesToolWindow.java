@@ -77,6 +77,10 @@ public class ArchetypesToolWindow extends ToolWindowComponent
     return (ArchetypesToolWindowPanel)getContentPanel();
   }
 
+  private ArchetypesConfiguration getConfiguration() {
+    return getProject().getComponent(ArchetypesConfiguration.class);
+  }
+
   protected ToolWindow createToolWindow() {
     Icon icon = null;
 
@@ -109,7 +113,11 @@ public class ArchetypesToolWindow extends ToolWindowComponent
     mainPanel.add(createToolbar(), BorderLayout.WEST);
   }
 
-  protected void initContentPanel() {}
+  protected void initContentPanel() {
+    getConfiguration().loadArchetypesFile();
+    
+    ((ArchetypesToolWindowPanel)contentPanel).resetControls();    
+  }
 
   public void createArchetype() {
     if(projectRootPath == null || projectRootPath.trim().length() == 0) {

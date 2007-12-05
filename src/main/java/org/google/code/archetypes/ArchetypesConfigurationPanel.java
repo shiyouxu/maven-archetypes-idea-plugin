@@ -8,8 +8,6 @@ import javax.swing.*;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.*;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
 
 /**
  * This class represents form object for propagating changes in the configuration.
@@ -22,13 +20,6 @@ public class ArchetypesConfigurationPanel extends JPanel {
   private TextFieldWithBrowseButton archetypesFileLocationField = new TextFieldWithBrowseButton();
 
   public ArchetypesConfigurationPanel() {
-    //DataContext dataContext = DataManager.getInstance().getDataContext();
-   // Project project = DataKeys.PROJECT.getData(dataContext);
-
- //   FileChooserDescriptor descriptor1 = FileChooserDescriptorFactory.createSingleFolderDescriptor();
-
-  //  useExternalArchetypesFileBox.addBrowseFolderListener("Choose Project Root", "Select Location of Maven Repository", project, descriptor1);
-
     FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleLocalFileDescriptor();
 
     archetypesFileLocationField.addBrowseFolderListener("Choose archetypes.xml file location", "Select the location of archetypes.xml file", null, descriptor);

@@ -16,20 +16,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/action/CreateArchetypeAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesReader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/action" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/archetypes.xml" afterPath="$PROJECT_DIR$/src/main/resources/archetypes.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iws" afterPath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iws" />
-      <change type="MOVED" beforePath="C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java\org\google\code\archetypes\util\IdeaHelper.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/common/IdeaHelper.java" />
-      <change type="MOVED" beforePath="C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java\org\google\code\archetypes\util\XmlHelper.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/common/XmlHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/WarningDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfigurationPanel.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfigurationPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/common" />
     </list>
     <ignored path="maven-archetypes-idea-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,6 +56,19 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
       <breakpoint url="file://C:/Work/Projects/jlaunchpad/trunk/launcher/projects/universal-launcher/src/main/java/org/sf/jlaunchpad/UniversalLauncher.java" line="41" class="Class at UniversalLauncher.java:41" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java" line="84" class="Class at ArchetypesToolWindowPanel.java:84" package="org.google.code.archetypes">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -143,7 +149,18 @@
       <file leaf-file-name="ToolWindowComponent.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/common/ToolWindowComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="19" selection-start="1944" selection-end="1944" vertical-scroll-proportion="1.6648452">
+            <state line="44" column="0" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.19222689">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArchetypesToolWindow.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="53" selection-start="1422" selection-end="1422" vertical-scroll-proportion="1.0178572">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -154,8 +171,10 @@
       <file leaf-file-name="ArchetypesConfigurationPanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfigurationPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="1342" selection-end="1501" vertical-scroll-proportion="0.8306011">
-              <folding />
+            <state line="10" column="0" selection-start="349" selection-end="349" vertical-scroll-proportion="0.19957983">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -163,7 +182,7 @@
       <file leaf-file-name="ArchetypesConfiguration.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="192" column="76" selection-start="4591" selection-end="4957" vertical-scroll-proportion="1.4080145">
+            <state line="192" column="10" selection-start="4950" selection-end="4950" vertical-scroll-proportion="0.26155463">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -174,15 +193,24 @@
       <file leaf-file-name="ArchetypesToolWindowPanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="196" column="14" selection-start="7126" selection-end="7126" vertical-scroll-proportion="0.5774135">
+            <state line="16" column="39" selection-start="614" selection-end="614" vertical-scroll-proportion="-4.3686976">
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1196822040734" expanded="true" signature="1422:1743" placeholder="{...}" />
-                <marker date="1196822040734" expanded="true" signature="2516:7006" placeholder="{...}" />
-                <marker date="1196822040734" expanded="true" signature="7054:7110" placeholder="{...}" />
-                <marker date="1196822040734" expanded="true" signature="7158:7214" placeholder="{...}" />
-                <marker date="1196822040734" expanded="true" signature="7249:7319" placeholder="{...}" />
+                <marker date="1196877655359" expanded="true" signature="1378:1699" placeholder="{...}" />
+                <marker date="1196877655359" expanded="true" signature="2472:7106" placeholder="{...}" />
+                <marker date="1196877655359" expanded="true" signature="7154:7210" placeholder="{...}" />
+                <marker date="1196877655359" expanded="true" signature="7258:7314" placeholder="{...}" />
+                <marker date="1196877655359" expanded="true" signature="7349:7419" placeholder="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComponentWithBrowseButton.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/ComponentWithBrowseButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="99" column="29" selection-start="3588" selection-end="3588" vertical-scroll-proportion="0.41281512">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -190,36 +218,7 @@
       <file leaf-file-name="MavenExecutor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="0" selection-start="4404" selection-end="4404" vertical-scroll-proportion="0.33333334">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Messages.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/Messages.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="2522" selection-end="2522" vertical-scroll-proportion="0.33333334">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WarningDialog.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/WarningDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="1624" selection-end="1624" vertical-scroll-proportion="1.7304189">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextFieldWithBrowseButton.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/TextFieldWithBrowseButton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="91" selection-start="1877" selection-end="1877" vertical-scroll-proportion="0.7613843">
+            <state line="115" column="0" selection-start="4404" selection-end="4404" vertical-scroll-proportion="0.19222689">
               <folding />
             </state>
           </provider>
@@ -739,7 +738,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="5" width="1877" height="1147" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -747,7 +746,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958768" order="1" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756868" order="2" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40284842" order="1" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40284842" order="1" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="10" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" order="11" />
@@ -845,57 +844,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="86" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.35166666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/util/IconLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="2732" selection-end="2732" vertical-scroll-proportion="0.29373997">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/actionSystem/ActionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="32" selection-start="2573" selection-end="2573" vertical-scroll-proportion="0.4542536">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="0" selection-start="2891" selection-end="2891" vertical-scroll-proportion="0.60084033">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.6.0/src.zip!/javax/swing/Action.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="17" selection-start="9538" selection-end="9538" vertical-scroll-proportion="-1.2552521">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/DialogWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="20" selection-start="5841" selection-end="5841" vertical-scroll-proportion="0.3329832">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfigurationPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1342" selection-end="1501" vertical-scroll-proportion="0.8306011">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/CommonBundle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="103" column="23" selection-start="3012" selection-end="3012" vertical-scroll-proportion="0.3329832">
@@ -910,62 +858,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/TextFieldWithBrowseButton.java">
+    <entry file="jar://C:/Java/jdk1.6.0/src.zip!/java/net/SocketInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="91" selection-start="1877" selection-end="1877" vertical-scroll-proportion="0.7613843">
+        <state line="167" column="0" selection-start="4678" selection-end="4678" vertical-scroll-proportion="0.19222689">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/common/ToolWindowComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="19" selection-start="1944" selection-end="1944" vertical-scroll-proportion="1.6648452">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="76" selection-start="4591" selection-end="4957" vertical-scroll-proportion="1.4080145">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="14" selection-start="7126" selection-end="7126" vertical-scroll-proportion="0.5774135">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1196822040734" expanded="true" signature="1422:1743" placeholder="{...}" />
-            <marker date="1196822040734" expanded="true" signature="2516:7006" placeholder="{...}" />
-            <marker date="1196822040734" expanded="true" signature="7054:7110" placeholder="{...}" />
-            <marker date="1196822040734" expanded="true" signature="7158:7214" placeholder="{...}" />
-            <marker date="1196822040734" expanded="true" signature="7249:7319" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/Messages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="2522" selection-end="2522" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="0" selection-start="4404" selection-end="4404" vertical-scroll-proportion="0.33333334">
+        <state line="64" column="0" selection-start="2522" selection-end="2522" vertical-scroll-proportion="0.19222689">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/WarningDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1624" selection-end="1624" vertical-scroll-proportion="1.7304189">
+        <state line="12" column="76" selection-start="504" selection-end="504" vertical-scroll-proportion="0.2394958">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="0" selection-start="4404" selection-end="4404" vertical-scroll-proportion="0.19222689">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/util/pico/DefaultPicoContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="198" column="0" selection-start="7074" selection-end="7074" vertical-scroll-proportion="0.19222689">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/common/ToolWindowComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.19222689">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/ComponentWithBrowseButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="29" selection-start="3588" selection-end="3588" vertical-scroll-proportion="0.41281512">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.6.0/src.zip!/javax/swing/text/JTextComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="286" column="22" selection-start="11569" selection-end="11569" vertical-scroll-proportion="0.14239828">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.6.0/src.zip!/javax/swing/JTextField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="42" selection-start="5836" selection-end="5836" vertical-scroll-proportion="0.14346895">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/ui/TextFieldWithBrowseButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="77" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.09978992">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="39" selection-start="614" selection-end="614" vertical-scroll-proportion="-4.3686976">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1196877655359" expanded="true" signature="1378:1699" placeholder="{...}" />
+            <marker date="1196877655359" expanded="true" signature="2472:7106" placeholder="{...}" />
+            <marker date="1196877655359" expanded="true" signature="7154:7210" placeholder="{...}" />
+            <marker date="1196877655359" expanded="true" signature="7258:7314" placeholder="{...}" />
+            <marker date="1196877655359" expanded="true" signature="7349:7419" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="192" column="10" selection-start="4950" selection-end="4950" vertical-scroll-proportion="0.26155463">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesConfigurationPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="349" selection-end="349" vertical-scroll-proportion="0.19957983">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="53" selection-start="1422" selection-end="1422" vertical-scroll-proportion="1.0178572">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
