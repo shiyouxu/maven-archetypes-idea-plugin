@@ -4,7 +4,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import org.google.code.archetypes.ArchetypesToolWindow;
-import org.google.code.archetypes.common.IdeaAction;
+import org.google.code.idea.common.IdeaAction;
 
 import java.awt.*;
 

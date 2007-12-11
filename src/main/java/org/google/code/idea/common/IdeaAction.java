@@ -1,11 +1,10 @@
-package org.google.code.archetypes.common;
+package org.google.code.idea.common;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
-import org.google.code.archetypes.common.IdeaHelper;
 
 /**
  * This is base actopn class for the Tool Window.
