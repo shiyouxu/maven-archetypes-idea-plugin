@@ -25,15 +25,15 @@
       <ul>
         <li>1.0.3
           <ol>
-            <li>1. Bug fix: disabling initial openning of plugin toolwindow</li>
+            <li>Bug fix: disabling initial openning of plugin toolwindow</li>
           </ol>
         </li>
 
         <li>1.0.2
           <ol>
-            <li>1. Downgrading java version to 1.5 (to be compatible for Mac users)</li>
-            <li>2. Changing appfuse version to 2.0.1</li>
-            <li>3. Separating archetypes.xml file from jar file (make it avalilable for user modifications).</li>
+            <li>Downgrading java version to 1.5 (to be compatible for Mac users)</li>
+            <li>Changing appfuse version to 2.0.1</li>
+            <li>Separating archetypes.xml file from jar file (make it avalilable for user modifications).</li>
           </ol>
         </li>
 
