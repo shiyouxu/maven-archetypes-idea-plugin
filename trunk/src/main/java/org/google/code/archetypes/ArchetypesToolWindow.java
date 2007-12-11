@@ -5,11 +5,11 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.ToolWindow;
-import com.intellij.openapi.wm.ToolWindowAnchor;
-import com.intellij.openapi.wm.ToolWindowType;
 import com.intellij.openapi.ui.Messages;
-import org.google.code.archetypes.common.ToolWindowComponent;
+import com.intellij.openapi.wm.ToolWindow;
+import com.intellij.openapi.wm.ToolWindowType;
+import com.intellij.openapi.wm.ToolWindowAnchor;
+import org.google.code.idea.common.ToolWindowComponent;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -34,26 +34,22 @@ public class ArchetypesToolWindow extends ToolWindowComponent
   }
 
   public void projectOpened() {
-    initMainPanel();
+     createConsole();
 
-    initContentPanel();
-
-    openConsole();
-
-    setRegistered(true);
+     //setConsoleVisible(true);
   }
 
   public void projectClosed() {
-    disposeConsole();
+    //setConsoleVisible(false);
 
-    setRegistered(false);
+    closeConsole();
   }
 
  public void initComponent() {
-    init();
+    create();
   }
   public void disposeComponent() {
-    release();
+    dispose();
   }
 
   @NotNull
@@ -69,14 +65,10 @@ public class ArchetypesToolWindow extends ToolWindowComponent
     return getProject().getComponent(ArchetypesConfiguration.class);
   }
 
-  protected ToolWindow createToolWindow() {
-    Icon icon = null;
-
-    ToolWindow toolWindow = ideaHelper.createToolWindow(getProject(), getMainPanel(), TOOL_WINDOW_ID, ToolWindowAnchor.LEFT, icon);
-
+  protected void customizeToolWindow(ToolWindow toolWindow) {
     toolWindow.setType(ToolWindowType.DOCKED, null);
 
-    return toolWindow;
+    toolWindow.setAnchor(ToolWindowAnchor.LEFT, EMPTY_RUNNABLE);
   }
 
   protected JComponent createToolbar() {

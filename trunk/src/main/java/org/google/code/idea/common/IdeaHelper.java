@@ -1,6 +1,6 @@
 // IdeaHelper.java
 
-package org.google.code.archetypes.common;
+package org.google.code.idea.common;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
