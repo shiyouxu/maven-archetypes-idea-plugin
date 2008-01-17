@@ -13,7 +13,7 @@
   </component>
   <component name="Archetypes.Configuration">
     <option name="archetypesFileLocation" value="archetypes.xml" />
-    <option name="workingDirectory" value="" />
+    <option name="workingDirectory" value="C:\temp" />
   </component>
   <component name="Archetypes.ToolWindow">
     <option name="projectRootPath" value="C:\temp\1" />
