@@ -15,16 +15,7 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesReader.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iml" afterPath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maven-archetypes-idea-plugin.ipr" afterPath="$PROJECT_DIR$/maven-archetypes-idea-plugin.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iws" afterPath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-    </list>
+    <list default="true" name="Default" comment="" />
     <ignored path="maven-archetypes-idea-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
   </component>
