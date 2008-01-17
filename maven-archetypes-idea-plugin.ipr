@@ -11,6 +11,10 @@
       <executeOn event="beforeRun" target="copy.resources" runConfigurationType="#org.jetbrains.idea.devkit.run.PluginConfigurationType" runConfigurationName="archetypes-plugin" />
     </buildFile>
   </component>
+  <component name="Archetypes.Configuration">
+    <option name="archetypesFileLocation" value="archetypes.xml" />
+    <option name="workingDirectory" value="" />
+  </component>
   <component name="Archetypes.ToolWindow">
     <option name="projectRootPath" value="C:\temp\1" />
   </component>
@@ -416,7 +420,7 @@
       <module fileurl="file://$PROJECT_DIR$/maven-archetypes-idea-plugin.iml" filepath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="IDEA 7584" project-jdk-type="IDEA JDK">
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="IDEA 7648" project-jdk-type="IDEA JDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="RUBY_DOC_SETTINGS">

@@ -8,6 +8,13 @@
         <include name="archetypes.xml"/>
       </fileset>
     </copy>
+
+    <copy todir="out/production/maven-archetypes-idea-plugin">
+      <fileset dir="">
+        <include name="archetypes.xml"/>
+      </fileset>
+    </copy>
+  
   </target>
 
 </project>

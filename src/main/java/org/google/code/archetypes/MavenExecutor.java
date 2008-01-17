@@ -2,23 +2,26 @@ package org.google.code.archetypes;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
-import org.apache.maven.embedder.*;
-import org.apache.maven.execution.MavenExecutionRequest;
-import org.apache.maven.execution.MavenExecutionResult;
-import org.google.code.archetypes.data.Archetype;
-import org.google.code.archetypes.data.Group;
-import org.jetbrains.idea.maven.builder.MavenBuilderImpl;
-import org.jetbrains.idea.maven.builder.MavenBuilderState;
-import org.jetbrains.idea.maven.builder.executor.MavenBuildParameters;
-import org.jetbrains.idea.maven.core.MavenCore;
-import org.jetbrains.idea.maven.core.MavenCoreImpl;
-import org.jetbrains.idea.maven.core.MavenCoreState;
-import org.jetbrains.idea.maven.core.util.MavenEnv;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Arrays;
+
+import org.google.code.archetypes.data.Group;
+import org.google.code.archetypes.data.Archetype;
+import org.jetbrains.idea.maven.core.MavenCoreState;
+import org.jetbrains.idea.maven.core.MavenCoreImpl;
+import org.jetbrains.idea.maven.core.MavenCore;
+import org.jetbrains.idea.maven.core.util.MavenEnv;
+import org.jetbrains.idea.maven.project.MavenException;
+import org.jetbrains.idea.maven.runner.executor.MavenRunnerParameters;
+import org.jetbrains.idea.maven.runner.MavenRunnerState;
+import org.jetbrains.idea.maven.runner.MavenRunnerImpl;
+import org.apache.maven.embedder.*;
+import org.apache.maven.execution.MavenExecutionResult;
+import org.apache.maven.execution.MavenExecutionRequest;
 
 /**
  * This class performs maven execution.
@@ -50,59 +53,60 @@ public class MavenExecutor {
 
     String remoteRepositories = sb.toString();
 
-     /*   MavenBuildParameters parameters = new MavenBuildParameters();
-         MavenCoreState coreState = (project.getComponent(MavenCore.class)).getState().clone();
-         MavenBuilderState builderState = (project.getComponent(MavenBuilder.class)).getState().clone();
-
-         MavenEmbeddedExecutor mavenExecutor = new MavenEmbeddedExecutor(parameters, coreState, builderState);
-
-         mavenExecutor.execute();
-        */
-
      MavenCore mavenCore = new MavenCoreImpl();
 
      mavenCore.loadState(new MavenCoreState() {
-       public MavenEmbedder createEmbedder() throws MavenEmbedderException {
-         //return MavenEnv.createEmbedder(getMavenHome(), getMavenSettingsFile(), getClass().getClassLoader());
+       public MavenEmbedder createEmbedder() throws MavenException {
+         //return MavenEnv.createEmbedder(getMavenHome(), getEffectiveLocalRepository(), getMavenSettingsFile(), getClass().getClassLoader());
 
-         Configuration configuration = new DefaultConfiguration();
-         configuration.setMavenEmbedderLogger(new MavenEmbedderConsoleLogger());
+         DefaultConfiguration configuration = new DefaultConfiguration();
+         configuration.setLocalRepository(getEffectiveLocalRepository());
+
+         MavenEmbedderConsoleLogger l = new MavenEmbedderConsoleLogger();
+         l.setThreshold(2);
+         configuration.setMavenEmbedderLogger(l);
 
          File userSettingsFile = MavenEnv.resolveUserSettingsFile(getMavenSettingsFile());
-         if (userSettingsFile != null)
-           configuration.setUserSettingsFile(userSettingsFile);
 
+         if(userSettingsFile != null) {
+           configuration.setUserSettingsFile(userSettingsFile);
+         }
          File globalSettingsFile = MavenEnv.resolveGlobalSettingsFile(getMavenHome());
-         if (globalSettingsFile != null)
+         if(globalSettingsFile != null) {
            configuration.setGlobalSettingsFile(globalSettingsFile);
+         }
 
          configuration.setClassLoader(getClass().getClassLoader());
-
-         ConfigurationValidationResult validationResult = MavenEmbedder.validateConfiguration(configuration);
-
-         if (!validationResult.isValid())
-           throw new MavenEmbedderException("Cannot create maven embedder.");
+         ConfigurationValidationResult result = MavenEmbedder.validateConfiguration(configuration);
+         if(!result.isValid()) {
+           //noinspection RedundantArrayCreation
+           throw new MavenException(Arrays.asList(new Exception[] {
+             result.getGlobalSettingsException(),
+             result.getUserSettingsException()
+           }));
+         }
 
          System.setProperty("maven.home", getMavenHome());
 
-         return new MavenEmbedder(configuration) {
-           public MavenExecutionResult execute(MavenExecutionRequest request) {
+         try {
+           return new MavenEmbedder(configuration) {
+          public MavenExecutionResult execute(MavenExecutionRequest request) {
              request.setBaseDirectory(new File(workingDir));
-             //System.getProperties().put("user.dir", workingDir.getText());
              request.setPom(null);
 
              return super.execute(request);
            }
-         };
+           };
+         }
+         catch(MavenEmbedderException e) {
+           throw new MavenException(e);
+         }
        }
      });
 
-     MavenBuilderImpl builder = new MavenBuilderImpl(project, mavenCore);
+    MavenRunnerImpl builder = new MavenRunnerImpl(project, mavenCore);
 
-//    MavenCoreState mavenCoreState = mavenCore.getState();
-//    mavenCoreState.setLocalRepository("c:/maven-repository");
-
-     MavenBuilderState builderState = builder.getState();
+     MavenRunnerState builderState = builder.getState();
      Map<String, String> mavenProperties = builderState.getMavenProperties();
 
      mavenProperties.put("archetypeGroupId", archetypeGroup.getGroupId());
@@ -112,17 +116,11 @@ public class MavenExecutor {
      mavenProperties.put("artifactId", artifactId);
      mavenProperties.put("version", version);
      mavenProperties.put("remoteRepositories", remoteRepositories);
+    // mavenProperties.put("user.dir", workingDir);
 
      File projectDir = new File(workingDir + "/" + artifactId);
 
      if (projectDir.exists() && projectDir.list().length > 0) {
-/*       Messages.showMessageDialog(
-           "Output directory: " + workingDir + File.separatorChar + artifactId + "  should not exist!",
-           "Warning",
-           Messages.getInformationIcon()
-       );
-       */
-
        WarningDialog dialog = new WarningDialog(
            project,
            workingDir + File.separatorChar + artifactId,
@@ -136,7 +134,7 @@ public class MavenExecutor {
          List<String> goals = new ArrayList<String>();
          goals.add("archetype:create");
 
-         MavenBuildParameters buildParameters = new MavenBuildParameters(workingDir, goals, null);
+         MavenRunnerParameters buildParameters = new MavenRunnerParameters(workingDir, goals, null);
 
          buildParameters.setGoals(goals);
 
@@ -147,62 +145,3 @@ public class MavenExecutor {
    }
 
 }
-
-/*
-    ScriptExecutor executor = new ScriptExecutor();
-    List params = new ArrayList();
-
-    params.add(server.getInstallDir() + File.separator + scriptName);
-    params.add(userName);
-    params.add(dirName);
-    params.add(fileName);
-    params.add(tag);
-    params.add(comment);
- */
-    /*  int exitValue = 0;
-       try {
-         exitValue = executor.execute("C:/Env/maven-2.0.7/bin/mvn.bat ", "");
-       } catch (Exception e) {
-         e.printStackTrace();
-       }
-
-       if(exitValue == 0) {
-         String answer = executor.getStandardOutput();
-                 System.out.println(answer);
-       }
-       else {
-         String answer = executor.getErrorOutput();
-                 System.out.println(answer);
-
-       }
-    */
-
-/*    try {
-      // Runtime.getRuntime().exec( args);
-
-      Process p = Runtime.getRuntime().exec(args);
-
-      BufferedReader stdInput = new BufferedReader(new
-          InputStreamReader(p.getInputStream()));
-
-      BufferedReader stdError = new BufferedReader(new
-          InputStreamReader(p.getErrorStream()));
-
-      // read the output from the command
-
-      System.out.println("Here is the standard output of the command:\n");
-      String s = null;
-      while ((s = stdInput.readLine()) != null) {
-        System.out.println(s);
-      }
-
-      // read any errors from the attempted command
-
-      System.out.println("Here is the standard error of the command (if any):\n");
-      while ((s = stdError.readLine()) != null) {
-        System.out.println(s);
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
- */

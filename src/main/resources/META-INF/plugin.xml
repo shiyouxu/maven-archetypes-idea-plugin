@@ -4,8 +4,8 @@
   <name>Maven Archetypes</name>
 
   <description>This plugin helps to generate initial java project layout with the help of Maven Archetypes.</description>
-  <version>1.0.3</version>
-  <idea-version min="2000"/>
+  <version>1.0.4</version>
+  <idea-version min="7590"/>
 
   <vendor url="http://scriptlandia.blogspot.com" email="shvets_alexander@yahoo.com">Alexander Shvets</vendor>
 
@@ -23,6 +23,14 @@
 
     Changes:
       <ul>
+        <li>1.0.4
+          <ol>
+            <li>Adding support for Tapestry 5 archetype. </li>
+            <li>Moving out generic code into Maven Archetypes project; making dependency on it. </li>
+            <li>Making changes to be compliant with internal Maven IDEA API (min. requirements: 7.0.2). </li>
+          </ol>
+        </li>
+
         <li>1.0.3
           <ol>
             <li>Bug fix: disabling initial openning of plugin toolwindow</li>
