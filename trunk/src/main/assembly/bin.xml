@@ -1,0 +1,27 @@
+<assembly>
+  <id>bin</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+
+  <fileSets>
+    <fileSet>
+      <directory>target</directory>
+      <outputDirectory>lib</outputDirectory>
+
+      <includes>
+        <include>maven-archetypes-idea-plugin-*.jar</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>lib</outputDirectory>
+      <includes>
+        <include>org.google.code:maven-archetypes</include>
+      </includes>
+    </dependencySet>
+  </dependencySets>
+
+</assembly>

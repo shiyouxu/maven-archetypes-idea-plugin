@@ -136,8 +136,9 @@
         <configuration>
           <descriptors>
             <descriptor>src/main/assembly/src.xml</descriptor>
+            <descriptor>src/main/assembly/bin.xml</descriptor>
            </descriptors>
-          <finalName>${project.build.finalName}</finalName>
+          <finalName>${project.artifactId}</finalName>
         </configuration>
       </plugin>
     </plugins>

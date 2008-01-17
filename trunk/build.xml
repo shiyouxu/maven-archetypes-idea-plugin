@@ -14,7 +14,11 @@
         <include name="archetypes.xml"/>
       </fileset>
     </copy>
-  
+  </target>
+
+  <target name="add.version">
+    <move file="target/maven-archetypes-idea-plugin-bin.zip" tofile="target/maven-archetypes-idea-plugin-bin-1.0.4.zip"/>
+    <move file="target/maven-archetypes-idea-plugin-src.zip" tofile="target/maven-archetypes-idea-plugin-src-1.0.4.zip"/>
   </target>
 
 </project>
