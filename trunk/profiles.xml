@@ -3,7 +3,7 @@
     <id>dev</id>
     <properties>
       <idea.version>7648</idea.version>
-      <idea.home>C:/Editors/IntelliJ IDEA 7648</idea.home>
+      <idea.home>C:/Editors/IntelliJ IDEA 7656</idea.home>
    </properties>
     <activation>
       <activeByDefault>true</activeByDefault>
