@@ -4,8 +4,8 @@
   <name>Maven Archetypes</name>
 
   <description>This plugin helps to generate initial java project layout with the help of Maven Archetypes.</description>
-  <version>1.0.4</version>
-  <idea-version min="7590"/>
+  <version>1.0.5</version>
+  <idea-version min="7656"/>
 
   <vendor url="http://scriptlandia.blogspot.com" email="shvets_alexander@yahoo.com">Alexander Shvets</vendor>
 
@@ -23,6 +23,13 @@
 
     Changes:
       <ul>
+        <li>1.0.5
+          <ol>
+            <li>Adding support for Terracota archetypes. </li>
+            <li>Changes in layout.</li>
+          </ol>
+        </li>
+        
         <li>1.0.4
           <ol>
             <li>Adding support for Tapestry 5 archetype. </li>

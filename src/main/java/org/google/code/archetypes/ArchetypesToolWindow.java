@@ -96,7 +96,7 @@ public class ArchetypesToolWindow extends ToolWindowComponent
   protected void initContentPanel() {
     getConfiguration().loadArchetypesFile();
     
-    ((ArchetypesToolWindowPanel)contentPanel).resetControls();    
+  //  ((ArchetypesToolWindowPanel)contentPanel).resetControls();    
   }
 
   public void createArchetype() {

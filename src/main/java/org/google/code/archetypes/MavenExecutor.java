@@ -11,13 +11,13 @@ import java.util.Arrays;
 
 import org.google.code.archetypes.data.Group;
 import org.google.code.archetypes.data.Archetype;
-import org.jetbrains.idea.maven.core.MavenCoreState;
+import org.jetbrains.idea.maven.core.MavenCoreSettings;
 import org.jetbrains.idea.maven.core.MavenCoreImpl;
 import org.jetbrains.idea.maven.core.MavenCore;
 import org.jetbrains.idea.maven.core.util.MavenEnv;
 import org.jetbrains.idea.maven.project.MavenException;
 import org.jetbrains.idea.maven.runner.executor.MavenRunnerParameters;
-import org.jetbrains.idea.maven.runner.MavenRunnerState;
+import org.jetbrains.idea.maven.runner.MavenRunnerSettings;
 import org.jetbrains.idea.maven.runner.MavenRunnerImpl;
 import org.apache.maven.embedder.*;
 import org.apache.maven.execution.MavenExecutionResult;
@@ -55,7 +55,7 @@ public class MavenExecutor {
 
      MavenCore mavenCore = new MavenCoreImpl();
 
-     mavenCore.loadState(new MavenCoreState() {
+     mavenCore.loadState(new MavenCoreSettings() {
        public MavenEmbedder createEmbedder() throws MavenException {
          //return MavenEnv.createEmbedder(getMavenHome(), getEffectiveLocalRepository(), getMavenSettingsFile(), getClass().getClassLoader());
 
@@ -106,7 +106,7 @@ public class MavenExecutor {
 
     MavenRunnerImpl builder = new MavenRunnerImpl(project, mavenCore);
 
-     MavenRunnerState builderState = builder.getState();
+     MavenRunnerSettings builderState = builder.getState();
      Map<String, String> mavenProperties = builderState.getMavenProperties();
 
      mavenProperties.put("archetypeGroupId", archetypeGroup.getGroupId());
