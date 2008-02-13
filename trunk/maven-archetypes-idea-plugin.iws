@@ -16,16 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindowPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iml" afterPath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iml" />
-      <change type="DELETED" beforePath="C:\Work\Projects\IDEA-projects\maven-archetypes-idea-plugin\src\main\java\org\google\code\archetypes\ArchetypesReader.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/MavenExecutor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iws" afterPath="$PROJECT_DIR$/maven-archetypes-idea-plugin.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profiles.xml" afterPath="$PROJECT_DIR$/profiles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java" afterPath="$PROJECT_DIR$/src/main/java/org/google/code/archetypes/ArchetypesToolWindow.java" />
     </list>
     <ignored path="maven-archetypes-idea-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -135,7 +127,7 @@
       <file leaf-file-name="plugin.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="41" selection-start="369" selection-end="369" vertical-scroll-proportion="0.14103924">
+            <state line="7" column="44" selection-start="385" selection-end="385" vertical-scroll-proportion="0.14103924">
               <folding />
             </state>
           </provider>
@@ -826,7 +818,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="41" selection-start="369" selection-end="369" vertical-scroll-proportion="0.14103924">
+        <state line="7" column="44" selection-start="385" selection-end="385" vertical-scroll-proportion="0.14103924">
           <folding />
         </state>
       </provider>
