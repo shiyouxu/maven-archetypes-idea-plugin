@@ -5,7 +5,7 @@
 
   <description>This plugin helps to generate initial java project layout with the help of Maven Archetypes.</description>
   <version>1.0.5</version>
-  <idea-version min="7656"/>
+  <idea-version min="7656" since-build="7656"/>
 
   <vendor url="http://scriptlandia.blogspot.com" email="shvets_alexander@yahoo.com">Alexander Shvets</vendor>
 
