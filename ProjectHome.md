@@ -1,0 +1,1 @@
+This plugin helps to generate initial java project layout with the help of Maven Archetypes.
